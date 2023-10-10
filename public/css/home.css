@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+/*トップページ*/
+div.home-card{
+    margin-left: 20px;
+    margin-right: 30px;
+    margin-bottom: 10px;
+    width: 255px;
+    display: inline-block; 
+}
+a.card-post-a{
+    color: limegreen;
+    text-decoration: none;
+}
+p.home-card-img img{
+    width: 300px;
+    border-radius: 10px;
+}
+div.home-card-body{
+    width: 300px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+div.home-card-title{
+    padding: 5px;
+    height: 40px;
+    overflow: hidden;
+}
+div.home-card-name{
+    padding: 5px;
+    height: 40px;
+    overflow: hidden;
+}

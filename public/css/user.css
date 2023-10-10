@@ -1,0 +1,96 @@
+@charset "utf-8";
+
+/*ユーザー詳細ページ*/
+div.mypage-name{
+    color: limegreen;
+}
+div.mypage-header{
+    display: flex;
+}
+div.mypage-name{
+    overflow: auto;
+    width: 1000px;
+    max-width: 1000px;
+}
+div.mypage-user-edit{
+    margin-left: 20px;
+}
+a.mypage-user-edit-btn{
+    width: 100px;
+    color: limegreen;
+}
+div.mypage-introducition{
+    color: limegreen;
+    margin-bottom: 3%;
+}
+div.mypage-introduction-content{
+    overflow: auto;
+    height: auto;
+    max-height: 200px;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border:solid 1px limegreen;
+}
+div.mypage-mypost-title{
+    color: limegreen;
+}
+div.mypage-user-edit{
+    margin-bottom: 10px;
+}
+p.post-null{
+    color: limegreen;
+}
+/*ユーザー詳細ページのアップロード一覧*/
+div.user-post-card{
+    margin-left: 20px;
+    margin-right: 35px;
+    margin-bottom: 10px;
+    width: 255px;
+    display: inline-block; 
+}
+a.user-post-a{
+    color: limegreen;
+    text-decoration: none;
+}
+p.user-card-img img{
+    width: 300px;
+    border-radius: 10px;
+}
+div.user-card-body{
+    width: 300px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+div.user-card-title{
+    padding: 5px;
+    height: 40px;
+    overflow: hidden;
+}
+div.user-card-name{
+    padding: 5px;
+    height: 40px;
+    overflow: hidden;
+}
+/*チェックボタン*/
+button.user-check-btn{
+    margin-top: -80px;
+}
+button.user-check-delete-btn{
+}
+
+
+
+/*ユーザー編集ページ*/
+div.user-form{
+    color: limegreen;
+}
+button.edit-btn{
+    width: 100%;
+    margin-bottom: 10px;
+}
+button.destroy-btn{
+    width: 100%;
+}

@@ -1,0 +1,123 @@
+@charset "utf-8";
+
+/*アップロード*/
+input.upload-btn{
+    width: 100%;
+    color: limegreen;
+}
+
+/*聴取ページ*/
+div.post{
+    text-align: center;
+    color: limegreen;
+}
+div.post-head{
+    display:flex;
+    justify-content: center;
+    margin-right:10%;
+}
+div.post-user{
+    margin-top:10px;
+}
+a.post-user-name{
+    color: limegreen;
+    text-decoration: none;
+}
+a:hover.post-user-name{
+    color: white;
+}
+img.post-show-img{
+    height: 210px;
+}
+div.post-title{
+    overflow: auto;
+    width: 400px;
+    margin-left: 5%;
+    padding-top: 2%;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+div.post-detail{
+    overflow: auto;
+    height: 210px;
+    min-height: 210px;
+    max-height: 210px;
+    width: 400px;
+    text-align: left;
+    margin-left: 5%;
+    padding-top: 2%;
+    padding-right: 5%;
+    padding-left: 5%;
+    border: solid 2px limegreen;
+}
+button.post-delete-btn{
+    width: 400px;
+    margin-top: 5%;
+    margin-left: 5%;
+    padding-top: 2%;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+a.post-edit-btn{
+    width: 400px;
+    margin-top: 5%;
+    margin-left: 5%;
+    padding-top: 2%;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+
+/*その他ポッドキャスト一覧*/
+div.user_posts{
+    margin-top: 50px;
+}
+div.user-post-card{
+    margin-left: 10px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    width: 255px;
+    display: inline-block; 
+}
+a.card-post-a{
+    color: limegreen;
+    text-decoration: none;
+}
+p.user-post-card-img img{
+    width: 300px;
+    border-radius: 10px;
+}
+div.user-post-card-body{
+    width: 300px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+div.user-post-card-title{
+    padding: 5px;
+    height: 40px;
+    overflow: hidden;
+}
+div.user-post-card-name{
+    padding: 5px;
+    height: 40px;
+    overflow: hidden;
+}
+
+/*チェックボタン*/
+button.post-check-btn{
+    width: 400px;
+    margin-top: 5%;
+    margin-left: 5%;
+    padding-top: 2%;
+    padding-right: 5%;
+    padding-left: 5%;
+    position: relative;
+    bottom: 40px;
+}
+button.post-check-delete-btn{
+    width: 400px;
+    margin-top: 5%;
+    margin-left: 5%;
+    padding-top: 2%;
+    padding-right: 5%;
+    padding-left: 5%;
+}

@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+div.card-header{
+    color: limegreen;
+    border: solid 1px limegreen;
+}
+div.card{
+    background-color: black;
+    color: limegreen;
+    border: solid 2px limegreen;
+}
+a.password-forget{
+    color:limegreen;
+}
+a:hover.password-forget{
+    color: white;
+}
+button.register-btn{
+    width: 48%;
+}
+button.login-btn{
+    width: 75%;
+}
