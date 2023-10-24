@@ -18,6 +18,11 @@
                 <p>{{ $post['name'] }}</p>
               </div>
               <div class="home-card-name">
+                @if($post->user->profile_image)
+                  <p><img src="{{ asset('storage/' . $post->user['profile_image']) }}" width="80" height="30" class="home-show-profile-img"></p>
+                @else
+                  <p class="home-profile-no-img">No Image</p>
+                @endif
                 <p>{{ $post->user->name }}</p>
               </div>
             </div>
@@ -37,6 +42,11 @@
                 <p>{{ $post['name'] }}</p>
               </div>
               <div class="home-card-name">
+                @if($post->user->profile_image)
+                  <p><img src="{{ asset('storage/' . $post->user['profile_image']) }}" width="80" height="30" class="home-show-profile-img"></p>
+                @else
+                  <p class="home-profile-no-img">No Image</p>
+                @endif
                 <p>{{ $post->user->name }}</p>
               </div>
             </div>

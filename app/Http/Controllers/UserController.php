@@ -16,7 +16,14 @@ class UserController extends Controller
 {
     public function index()
     {
+        $user = Auth::user();
+        $current_user = Auth::id();
         
+        //チェッカーの配信取得
+        $myChecks = Check::where('user_id', '=', $current_user)->get();
+        $checkerPosts = Post::where('user_id', '=', $myChecks->check_id)->get();
+        
+        return view('user.index', ['user' => $user, 'current_user'=> $current_user, 'checkerPosts'=> $checkerPosts]);
     }
     public function show($id)
     {
@@ -39,10 +46,17 @@ class UserController extends Controller
         $user = Auth::user();
         $current_user = Auth::id();
         $posts = Post::where('user_id', '=', $current_user)->get();
+        if($request->profile_image){
+            $user->profile_image = $request->profile_image->store('profile_images');
+        }
         $user->name = $request->name;
         $user->email = $request->email;
         $user->self_introduction = $request->self_introduction;
-        $user->password = $request->password;
+        if($request->password){
+            $user->password = $request->password;
+            $user->save();
+            return view('users.show', ['user' => $user, 'current_user'=> $current_user, 'posts' => $posts])->with('ユーザー情報を更新しました');
+        }
         $user->save();
         return view('users.show', ['user' => $user, 'current_user'=> $current_user, 'posts' => $posts])->with('ユーザー情報を更新しました');
     }

@@ -23,10 +23,23 @@ div.home-card-body{
 }
 div.home-card-title{
     padding: 5px;
-    height: 40px;
+    height: 30px;
     overflow: hidden;
 }
+img.home-show-profile-img{
+    margin-right: 10px;
+}
+p.home-profile-no-img{
+    margin-right: 10px;
+    text-align: center;
+    width: 80px;
+    height: 30px;
+    background-color: gray;
+    color: black;
+    border-radius: 5px;
+}
 div.home-card-name{
+    display: flex;
     padding: 5px;
     height: 40px;
     overflow: hidden;

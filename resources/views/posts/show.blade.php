@@ -8,7 +8,13 @@
                 <div class="post-head">
                     <div class="post-content">
                         <div class="post-user">
-                            <h4>配信者：<a href="{{ route('user.show', $post->user_id) }}" class="post-user-name">{{ $post->user->name }}</a></h4>
+                            <a href="{{ route('user.show', $post->user_id) }}" class="post-user-name">
+                            @if($post->user->profile_image)
+                              <p><img src="{{ asset('storage/' . $post->user['profile_image']) }}" width="100" height="40" class="post-show-profile-img"></p>
+                            @else
+                              <p class="profile-no-img">No Image</p>
+                            @endif
+                            <h4>{{ $post->user->name }}</a></h4>
                         </div>
                         <div class="post-img">
                             <p><img src="{{ asset('storage/' . $post['image']) }}" width="300" class="post-show-img"></p>
@@ -50,6 +56,11 @@
                             <p>{{ $user_post['name'] }}</p>
                           </div>
                           <div class="user-post-card-name">
+                            @if($post->user->profile_image)
+                              <p><img src="{{ asset('storage/' . $post->user['profile_image']) }}" width="100" height="40" class="post-show-profile-img"></p>
+                            @else
+                              <p class="profile-no-img">No Image</p>
+                            @endif
                             <p>{{ $user_post->user->name }}</p>
                           </div>
                         </div>
@@ -62,7 +73,13 @@
                 <div class="post-head">
                     <div class="post-content">
                         <div class="post-user">
-                            <h4>配信者：<a href="{{ route('user.show', $post->user_id) }}" class="post-user-name">{{ $post->user->name }}</a></h4>
+                            <a href="{{ route('user.show', $post->user_id) }}" class="post-user-name">
+                            @if($post->user->profile_image)
+                              <p><img src="{{ asset('storage/' . $post->user['profile_image']) }}" width="100" height="40" class="post-show-profile-img"></p>
+                            @else
+                              <p class="profile-no-img">No Image</p>
+                            @endif
+                            <h4>{{ $post->user->name }}</a></h4>
                         </div>
                         <div class="post-img">
                             <p><img src="{{ asset('storage/' . $post['image']) }}" width="300" class="post-show-img"></p>
@@ -111,6 +128,11 @@
                             <p>{{ $user_post['name'] }}</p>
                           </div>
                           <div class="user-post-card-name">
+                             @if($post->user->profile_image)
+                              <p><img src="{{ asset('storage/' . $post->user['profile_image']) }}" width="100" height="40" class="post-show-profile-img"></p>
+                            @else
+                              <p class="profile-no-img">No Image</p>
+                            @endif
                             <p>{{ $user_post->user->name }}</p>
                           </div>
                         </div>
@@ -124,15 +146,21 @@
             <div class="post-head">
                 <div class="post-content">
                     <div class="post-user">
-                            <h4>配信者：<a href="{{ route('user.show', $post->user_id) }}" class="post-user-name">{{ $post->user->name }}</a></h4>
-                        </div>
-                        <div class="post-img">
-                            <p><img src="{{ asset('storage/' . $post['image']) }}" width="300" class="post-show-img"></p>
-                        </div>
-                        <div class="post-audio">
-                            <audio controlslist=”nodownload” controls src="{{ asset('storage/' . $post['audio']) }}"></audio>
-                        </div>
+                        <a href="{{ route('user.show', $post->user_id) }}" class="post-user-name">
+                        @if($post->user->profile_image)
+                          <p><img src="{{ asset('storage/' . $post->user['profile_image']) }}" width="100" height="40" class="post-show-profile-img"></p>
+                        @else
+                          <p class="profile-no-img">No Image</p>
+                        @endif
+                        <h4>{{ $post->user->name }}</a></h4>
                     </div>
+                    <div class="post-img">
+                        <p><img src="{{ asset('storage/' . $post['image']) }}" width="300" class="post-show-img"></p>
+                    </div>
+                    <div class="post-audio">
+                        <audio controlslist=”nodownload” controls src="{{ asset('storage/' . $post['audio']) }}"></audio>
+                    </div>
+                </div>
                 <div class="post-article">
                     <div class="post-title">
                             <h3>{{ $post->name }}</h3>
@@ -156,6 +184,11 @@
                         <p>{{ $user_post['name'] }}</p>
                       </div>
                       <div class="user-post-card-name">
+                        @if($post->user->profile_image)
+                          <p><img src="{{ asset('storage/' . $post->user['profile_image']) }}" width="100" height="40" class="post-show-profile-img"></p>
+                        @else
+                          <p class="profile-no-img">No Image</p>
+                        @endif
                         <p>{{ $user_post->user->name }}</p>
                       </div>
                     </div>

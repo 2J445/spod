@@ -19,6 +19,7 @@
     <link href="{{ asset('/css/post.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/user.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/register.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/contact.css') }}" rel="stylesheet">
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -30,11 +31,17 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
+                <div class="search-form">
+                  <form action="{{ route('post.index') }}" method="GET">
+                    <input type="text" name="keyword" value="{{ $keyword??"" }}" class="search-bar">
+                    <input type="submit" value="検索" class="search-btn">
+                  </form>
+                </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
 
@@ -62,6 +69,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a href="{{ route('user.index') }}" class="dropdown-item">チェッカー配信</a>
                                     <a href="{{ route('user.show', $user->id) }}" class="dropdown-item">マイページ</a>
                                     <a href="{{ route('post.create') }}" class="dropdown-item">アップロード</a>
                                     <a href="{{ route('user.edit', $user->id) }}" class="dropdown-item">設定</a>
@@ -88,5 +96,13 @@
             </div>
         </main>
     </div>
+    <footer>
+        <div class="footer-btn">
+            <div class="contact-btn">
+                <a href="{{ route('contact.index') }}" class="dropdown-item">お問い合わせ</a>
+            </div>
+        </div>
+        <p>© spod.2023.</p>
+    </footer>
 </body>
 </html>

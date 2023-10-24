@@ -8,9 +8,25 @@ div.mypage-header{
     display: flex;
 }
 div.mypage-name{
+    display: flex;
     overflow: auto;
     width: 1000px;
     max-width: 1000px;
+}
+div.mypage-introduction-title{
+    margin-top: 20px;
+}
+img.user-show-profile-img{
+    margin-right: 20px;
+}
+p.profile-no-img{
+    margin-right: 20px;
+    color: black;
+    text-align: center;
+    width:100px;
+    height:40px;
+    background-color: gray;
+    border-radius: 10px;
 }
 div.mypage-user-edit{
     margin-left: 20px;
@@ -70,6 +86,7 @@ div.user-card-title{
     overflow: hidden;
 }
 div.user-card-name{
+    display: flex;
     padding: 5px;
     height: 40px;
     overflow: hidden;
@@ -80,8 +97,6 @@ button.user-check-btn{
 }
 button.user-check-delete-btn{
 }
-
-
 
 /*ユーザー編集ページ*/
 div.user-form{

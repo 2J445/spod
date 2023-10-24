@@ -28,6 +28,7 @@ URL::forceScheme('https');
 //ユーザー
 Auth::routes();
 Route::resource('user', App\Http\Controllers\UserController::class);
+Route::get('/user/index', [App\Http\Controllers\UserController::class, 'index'])->name('user.index');
 Route::get('/users/{id}', [App\Http\Controllers\UserController::class, 'show'])->name('user.show');
 Route::get('/user/edit/{id}', [App\Http\Controllers\UserController::class, 'edit']); //ユーザー編集
 Route::get('/user/destroy_confirm/{id}', [App\Http\Controllers\UserController::class, 'destroy_confirm']); //ユーザー退会
@@ -35,6 +36,16 @@ Route::post('/user/update/{id}', [App\Http\Controllers\UserController::class, 'u
 
 //サインアップ・ログイン後の遷移
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//お問い合わせフォーム
+//入力ページ
+Route::get('/contact', [App\Http\Controllers\ContactController::class, 'index'])->name('contact.index');
+
+//確認ページ
+Route::post('/contact/confirm', [App\Http\Controllers\ContactController::class, 'confirm'])->name('contact.confirm');
+
+//送信完了ページ
+Route::post('/contact/thanks', [App\Http\Controllers\ContactController::class, 'send'])->name('contact.send');
 
 //投稿
 Route::resource('post', App\Http\Controllers\PostController::class);

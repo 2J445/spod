@@ -9,7 +9,12 @@
                 <div class="mypage-body">
                   <div class="mypage-header">
                     <div class="mypage-name">
-                        <h2>{{ $user->name }}</h2>
+                      @if($user->profile_image)
+                        <p><img src="{{ asset('storage/' . $user['profile_image']) }}" width="100" height="40" class="user-show-profile-img"></p>
+                      @else
+                        <p class="profile-no-img">No Image</p>
+                      @endif
+                      <h2>{{ $user->name }}</h2>
                     </div>
                     <div class="mypage-user-edit">
                       <a href="{{ route('user.edit', $user->id) }}" class="mypage-user-edit-btn btn btn-outline-success">設定</a>
@@ -20,7 +25,7 @@
                             <h5>詳細</h5>
                         </div>
                         <div class="mypage-introduction-content">
-                          <p style="white-space:pre-wrap;">{!! nl2br(e($user->self_introduction)) !!}</p>
+                            <p>{!! nl2br(e($user->self_introduction)) !!}</p>
                         </div>
                     </div>
                     </div>
@@ -42,6 +47,11 @@
                                     <p>{{ $post['name'] }}</p>
                                   </div>
                                   <div class="user-card-name">
+                                    @if($user->profile_image)
+                                      <p><img src="{{ asset('storage/' . $user['profile_image']) }}" width="100" height="40" class="user-show-profile-img"></p>
+                                    @else
+                                      <p class="profile-no-img">No Image</p>
+                                    @endif
                                     <p>{{ $post->user->name }}</p>
                                   </div>
                                 </div>
@@ -59,7 +69,12 @@
                 <div class="mypage-body">
                   <div class="mypage-header">
                     <div class="mypage-name">
-                        <h2>{{ $user->name }}</h2>
+                      @if($user->profile_image)
+                        <p><img src="{{ asset('storage/' . $user['profile_image']) }}" width="100" height="40" class="user-show-profile-img"></p>
+                      @else
+                        <p class="profile-no-img">No Image</p>
+                      @endif
+                      <h2>{{ $user->name }}</h2>
                     </div>
                     <div class="user-check">
                             @if($check)
@@ -82,7 +97,7 @@
                             <h5>詳細</h5>
                         </div>
                         <div class="mypage-introduction-content">
-                            <p style="white-space:pre-wrap;">{!! nl2br(e($user->self_introduction)) !!}</p>
+                            <p>{!! nl2br(e($user->self_introduction)) !!}</p>
                         </div>
                     </div>
                     </div>
@@ -104,6 +119,11 @@
                                     <p>{{ $post['name'] }}</p>
                                   </div>
                                   <div class="user-card-name">
+                                    @if($user->profile_image)
+                                      <p><img src="{{ asset('storage/' . $user['profile_image']) }}" width="100" height="40" class="user-show-profile-img"></p>
+                                    @else
+                                      <p class="profile-no-img">No Image</p>
+                                    @endif
                                     <p>{{ $post->user->name }}</p>
                                   </div>
                                 </div>
@@ -122,7 +142,12 @@
               <div class="mypage-body">
                 <div class="mypage-header">
                   <div class="mypage-name">
-                      <h2>{{ $user->name }}</h2>
+                    @if($user->profile_image)
+                      <p><img src="{{ asset('storage/' . $user['profile_image']) }}" width="100" height="40" class="user-show-profile-img"></p>
+                    @else
+                      <p class="profile-no-img">No Image</p>
+                    @endif
+                    <h2>{{ $user->name }}</h2>
                   </div>
                   <div class="mypage-user-edit">
                     <a href="{{ route('user.edit', $user->id) }}" class="mypage-user-edit-btn btn btn-outline-success">設定</a>
@@ -133,7 +158,7 @@
                           <h5>詳細</h5>
                       </div>
                       <div class="mypage-introduction-content">
-                          <p style="white-space:pre-wrap;">{!! nl2br(e($user->self_introduction)) !!}</p>
+                          <p>{!! nl2br(e($user->self_introduction)) !!}</p>
                       </div>
                   </div>
                   </div>
@@ -155,6 +180,11 @@
                                   <p>{{ $post['name'] }}</p>
                                 </div>
                                 <div class="user-card-name">
+                                  @if($user->profile_image)
+                                    <p><img src="{{ asset('storage/' . $user['profile_image']) }}" width="100" height="40" class="user-show-profile-img"></p>
+                                  @else
+                                    <p class="profile-no-img">No Image</p>
+                                  @endif
                                   <p>{{ $post->user->name }}</p>
                                 </div>
                               </div>

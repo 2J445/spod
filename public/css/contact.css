@@ -1,0 +1,42 @@
+/*お問い合わせ入力フォーム*/
+div.contact-input-form{
+    padding-left: 10px;
+    padding-top: 5px;
+}
+div.contact-input-form label{
+    width: 120px;
+    text-align: top;
+}
+div.contact-input-form input{
+    width: 70%;
+}
+div.contact-input-form textarea{
+    width: 70%;
+}
+button.contact-form-btn{
+    margin-bottom: 20px;
+}
+/*お問い合わせ確認フォーム*/
+div.input-contact-confirm{
+    padding: 10px;
+}
+div.contact-email-confirm{
+    height: auto;
+}
+div.contact-title-confirm{
+    height: auto;
+}
+div.contact-body-confirm{
+    height: auto;
+}
+div.input-contact-confirm-btn{
+    text-align: center;
+    margin-top: 10px;
+}
+div.input-contact-confirm-btn button{
+    width: 100px;
+}
+div.content-thanks{
+    color: limegreen;
+    text-align: center;
+}

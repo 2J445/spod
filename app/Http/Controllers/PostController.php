@@ -8,17 +8,25 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Collection; //追記
+use Illuminate\Pagination\LengthAwarePaginator; //追記
 
 class PostController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-      $user = Auth::user();
-      // データベース内のすべてのpostを取得し、post変数に代入
-      $posts = Post::all();
-      // 'posts'フォルダ内の'index'viewファイルを返す。
-      // その際にview内で使用する変数を代入します。
-      return view('posts/index', ['posts' => $posts, 'user'=> $user]);
+        $keyword = $request->input('keyword');
+
+        $query = Post::query();
+
+        if(!empty($keyword)) {
+            $query->where('name', 'LIKE', "%{$keyword}%")
+                ->orWhere('detail', 'LIKE', "%{$keyword}%");
+        }
+
+        $posts = $query->paginate(10);
+        $user = Auth::user();
+        return view('posts.index', compact('posts', 'keyword', 'user'));
     }
     
     public function show($id)
@@ -66,7 +74,8 @@ class PostController extends Controller
         $user = Auth::user();
         $current_user = auth()->user();
         $posts = Post::where('user_id', '=', $current_user)->get();
-        return view('posts.show', ['user' => $user, 'current_user'=> $current_user, 'posts' => $posts, 'post' => $post]);
+        $user_posts = Post::where('user_id', '=', $post->user_id)->get();
+        return view('posts.show', ['user' => $user, 'current_user'=> $current_user, 'posts' => $posts, 'post' => $post, 'user_posts'=>$user_posts]);
     }
     
     public function destroy($id)
@@ -99,9 +108,10 @@ class PostController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:100'],
             'image' => ['file', 'mimes:gif,png,jpg,webp', 'max:3072'],
             'audio' => ['file', 'mp3,mp4,wave'],
+            'detail' => ['required', 'string', 'max:10000'],
         ]);
     }
 }
