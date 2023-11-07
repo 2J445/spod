@@ -12,9 +12,11 @@
                       @if($user->profile_image)
                         <p><img src="{{ asset('storage/' . $user['profile_image']) }}" width="100" height="40" class="user-show-profile-img"></p>
                       @else
-                        <p class="profile-no-img">No Image</p>
+                        <p class="user-profile-header-no-img">No Image</p>
                       @endif
-                      <h2>{{ $user->name }}</h2>
+                      <div class="user-page-show-name">
+                        <h2>{{ $user->name }}</h2>
+                      </div>
                     </div>
                     <div class="mypage-user-edit">
                       <a href="{{ route('user.edit', $user->id) }}" class="mypage-user-edit-btn btn btn-outline-success">設定</a>
@@ -50,9 +52,11 @@
                                     @if($user->profile_image)
                                       <p><img src="{{ asset('storage/' . $user['profile_image']) }}" width="100" height="40" class="user-show-profile-img"></p>
                                     @else
-                                      <p class="profile-no-img">No Image</p>
+                                      <p class="user-profile-no-img">No Image</p>
                                     @endif
-                                    <p>{{ $post->user->name }}</p>
+                                    <div class="user-page-profile-name">
+                                      <p>{{ $post->user->name }}</p>
+                                    </div>
                                   </div>
                                 </div>
                               </a>
@@ -72,9 +76,11 @@
                       @if($user->profile_image)
                         <p><img src="{{ asset('storage/' . $user['profile_image']) }}" width="100" height="40" class="user-show-profile-img"></p>
                       @else
-                        <p class="profile-no-img">No Image</p>
+                        <p class="user-profile-header-no-img">No Image</p>
                       @endif
-                      <h2>{{ $user->name }}</h2>
+                      <div class="user-page-show-name">
+                        <h2>{{ $user->name }}</h2>
+                      </div>
                     </div>
                     <div class="user-check">
                             @if($check)
@@ -122,9 +128,11 @@
                                     @if($user->profile_image)
                                       <p><img src="{{ asset('storage/' . $user['profile_image']) }}" width="100" height="40" class="user-show-profile-img"></p>
                                     @else
-                                      <p class="profile-no-img">No Image</p>
+                                      <p class="user-profile-no-img">No Image</p>
                                     @endif
-                                    <p>{{ $post->user->name }}</p>
+                                    <div class="user-page-profile-name">
+                                      <p>{{ $post->user->name }}</p>
+                                    </div>
                                   </div>
                                 </div>
                               </a>
@@ -145,9 +153,11 @@
                     @if($user->profile_image)
                       <p><img src="{{ asset('storage/' . $user['profile_image']) }}" width="100" height="40" class="user-show-profile-img"></p>
                     @else
-                      <p class="profile-no-img">No Image</p>
+                      <p class="user-profile-header-no-img">No Image</p>
                     @endif
-                    <h2>{{ $user->name }}</h2>
+                    <div class="user-page-show-name">
+                        <h2>{{ $user->name }}</h2>
+                      </div>
                   </div>
                   <div class="mypage-user-edit">
                     <a href="{{ route('user.edit', $user->id) }}" class="mypage-user-edit-btn btn btn-outline-success">設定</a>
@@ -183,9 +193,11 @@
                                   @if($user->profile_image)
                                     <p><img src="{{ asset('storage/' . $user['profile_image']) }}" width="100" height="40" class="user-show-profile-img"></p>
                                   @else
-                                    <p class="profile-no-img">No Image</p>
+                                    <p class="user-profile-no-img">No Image</p>
                                   @endif
-                                  <p>{{ $post->user->name }}</p>
+                                  <div class="user-page-profile-name">
+                                      <p>{{ $post->user->name }}</p>
+                                    </div>
                                 </div>
                               </div>
                             </a>

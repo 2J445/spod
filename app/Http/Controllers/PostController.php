@@ -35,7 +35,7 @@ class PostController extends Controller
       $post = Post::find($id); // idでPostを探し出す
       // 現在認証しているユーザーを取得
       $current_user = auth()->user();
-      $user_posts = Post::where('user_id', '=', $post->user_id)->get();
+      $user_posts = Post::where('user_id', '=', $post->user_id)->orderBy('created_at', 'desc')->get();
       if($user){
         //チェック登録されているかの確認
         $checks = Check::all();

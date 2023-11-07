@@ -14,6 +14,7 @@ a.card-post-a{
 }
 p.home-card-img img{
     width: 300px;
+    height: 200px;
     border-radius: 10px;
 }
 div.home-card-body{
@@ -32,11 +33,14 @@ img.home-show-profile-img{
 p.home-profile-no-img{
     margin-right: 10px;
     text-align: center;
-    width: 80px;
+    width: 90px;
     height: 30px;
     background-color: gray;
     color: black;
     border-radius: 5px;
+}
+div.home-page-profile-name{
+    width: 50%;
 }
 div.home-card-name{
     display: flex;

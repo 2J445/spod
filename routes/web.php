@@ -28,7 +28,6 @@ URL::forceScheme('https');
 //ユーザー
 Auth::routes();
 Route::resource('user', App\Http\Controllers\UserController::class);
-Route::get('/user/index', [App\Http\Controllers\UserController::class, 'index'])->name('user.index');
 Route::get('/users/{id}', [App\Http\Controllers\UserController::class, 'show'])->name('user.show');
 Route::get('/user/edit/{id}', [App\Http\Controllers\UserController::class, 'edit']); //ユーザー編集
 Route::get('/user/destroy_confirm/{id}', [App\Http\Controllers\UserController::class, 'destroy_confirm']); //ユーザー退会
@@ -62,3 +61,8 @@ Route::post('/post', [App\Http\Controllers\PostController::class, 'store'])->nam
 Route::resource('check', App\Http\Controllers\CheckController::class);
 Route::post('/checks', [App\Http\Controllers\CheckController::class, 'store'])->name('check.store');
 Route::get('/checks/{id}', [App\Http\Controllers\CheckController::class, 'show'])->name('check.show');
+
+// googleへのリダイレクト
+Route::get('/auth/google', 'App\Http\Controllers\GoogleLoginController@redirectToGoogle');
+// 認証後の処理
+Route::get('/auth/google/callback', 'App\Http\Controllers\GoogleLoginController@handleGoogleCallback');

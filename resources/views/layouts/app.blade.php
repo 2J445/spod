@@ -8,11 +8,16 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-
+    <link rel="shortcut icon" href="{{ asset('image/logo2.png') }}">
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     
+    <!-- google関連 -->
+    <link rel="stylesheet" href="css/bootstrap-social.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
     <!--css-->
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/home.css') }}" rel="stylesheet">
@@ -28,9 +33,11 @@
     <div class="app">
         <nav class="navbar navbar-expand-md navbar-light shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
+                <div class="spod-logo">
+                    <a class="navbar-brand" href="{{ url('/') }}">
+                        <img src="{{ asset('image/logo.png')}}">
+                    </a>
+                </div>
                 <div class="search-form">
                   <form action="{{ route('post.index') }}" method="GET">
                     <input type="text" name="keyword" value="{{ $keyword??"" }}" class="search-bar">

@@ -7,11 +7,22 @@ div.mypage-name{
 div.mypage-header{
     display: flex;
 }
+p.user-profile-header-no-img{
+    background-color: gray;
+    color: black;
+    width: 120px;
+    height: 40px;
+    text-align: center;
+    border-radius: 10px;
+    margin-right: 20px;
+}
 div.mypage-name{
     display: flex;
-    overflow: auto;
     width: 1000px;
     max-width: 1000px;
+}
+div.user-page-show-name{
+    overflow: auto;
 }
 div.mypage-introduction-title{
     margin-top: 20px;
@@ -73,6 +84,7 @@ a.user-post-a{
 }
 p.user-card-img img{
     width: 300px;
+    height: 200px;
     border-radius: 10px;
 }
 div.user-card-body{
@@ -91,6 +103,19 @@ div.user-card-name{
     height: 40px;
     overflow: hidden;
 }
+p.user-profile-no-img{
+    text-align: center;
+    background-color: gray;
+    color: black;
+    height: 30px;
+    width: 90px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+div.user-page-profile-name{
+    width: 50%;
+}
+
 /*チェックボタン*/
 button.user-check-btn{
     margin-top: -80px;
@@ -108,4 +133,93 @@ button.edit-btn{
 }
 button.destroy-btn{
     width: 100%;
+}
+
+/*最新チェック配信*/
+div.check-post-header{
+    text-align: center;
+    color: limegreen;
+    margin-bottom: 30px;
+}
+div.checker-card{
+    justify-content: center;
+    margin-left: 10%;
+    width: 80%;
+    height: 220px;
+}
+div.checker-card-body{
+    height: 220px;
+}
+div.checker-card-content{
+    display:flex;
+}
+div.checker-card-name{
+    display: flex;
+}
+img.checker-post-img{
+    width: 320px;
+    height: 220px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+p.checker-profile-no-img{
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    background-color: gray;
+    border-radius: 5px;
+    color: black;
+    margin-right: 10px;
+}
+
+/*最新チェック配信*/
+div.checker-list-title{
+    text-align: center;
+    color: limegreen;
+    margin-bottom: 30px;
+}
+div.checker-card{
+    width: 80%;
+    height: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-left: 10%;
+    margin-bottom: 30px;
+}
+div.checker-header-card{
+    display: flex;
+}
+img.checker-show-profile-img{
+    width: 120px;
+    height: 40px;
+    margin-right: 20px;
+}
+p.checker-profile-no-img{
+    background-color: gray;
+    color: black;
+    width: 120px;
+    height: 40px;
+    text-align: center;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+div.checker-card-self-introducition{
+    overflow: auto;
+    color: white;
+    background-color: #333333;
+    height: 100px;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+div.no-checks-list{
+    text-align: center;
+    color: limegreen;
+}
+div.spod-logo img{
+    width: 100px;
+    height: 50px;
 }

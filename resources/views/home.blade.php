@@ -23,7 +23,9 @@
                 @else
                   <p class="home-profile-no-img">No Image</p>
                 @endif
-                <p>{{ $post->user->name }}</p>
+                <div class="home-page-profile-name">
+                  <p>{{ $post->user->name }}</p>
+                </div>
               </div>
             </div>
           </a>
@@ -47,7 +49,9 @@
                 @else
                   <p class="home-profile-no-img">No Image</p>
                 @endif
-                <p>{{ $post->user->name }}</p>
+                <div class="user-page-profile-name">
+                  <p>{{ $post->user->name }}</p>
+                </div>
               </div>
             </div>
           </a>

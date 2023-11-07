@@ -59,9 +59,11 @@
                             @if($post->user->profile_image)
                               <p><img src="{{ asset('storage/' . $post->user['profile_image']) }}" width="100" height="40" class="post-show-profile-img"></p>
                             @else
-                              <p class="profile-no-img">No Image</p>
+                              <p class="post-profile-no-img">No Image</p>
                             @endif
-                            <p>{{ $user_post->user->name }}</p>
+                            <div class="post-page-profile-name">
+                                <p>{{ $user_post->user->name }}</p>
+                            </div>
                           </div>
                         </div>
                       </a>
@@ -131,9 +133,11 @@
                              @if($post->user->profile_image)
                               <p><img src="{{ asset('storage/' . $post->user['profile_image']) }}" width="100" height="40" class="post-show-profile-img"></p>
                             @else
-                              <p class="profile-no-img">No Image</p>
+                              <p class="post-profile-no-img">No Image</p>
                             @endif
-                            <p>{{ $user_post->user->name }}</p>
+                            <div class="post-page-profile-name">
+                                <p>{{ $user_post->user->name }}</p>
+                            </div>
                           </div>
                         </div>
                       </a>
@@ -187,9 +191,11 @@
                         @if($post->user->profile_image)
                           <p><img src="{{ asset('storage/' . $post->user['profile_image']) }}" width="100" height="40" class="post-show-profile-img"></p>
                         @else
-                          <p class="profile-no-img">No Image</p>
+                          <p class="post-profile-no-img">No Image</p>
                         @endif
-                        <p>{{ $user_post->user->name }}</p>
+                        <div class="post-page-profile-name">
+                                <p>{{ $user_post->user->name }}</p>
+                            </div>
                       </div>
                     </div>
                   </a>

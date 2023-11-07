@@ -18,19 +18,24 @@ class UserController extends Controller
     {
         $user = Auth::user();
         $current_user = Auth::id();
-        
-        //チェッカーの配信取得
-        $myChecks = Check::where('user_id', '=', $current_user)->get();
-        $checkerPosts = Post::where('user_id', '=', $myChecks->check_id)->get();
-        
-        return view('user.index', ['user' => $user, 'current_user'=> $current_user, 'checkerPosts'=> $checkerPosts]);
+        $checks = Check::where("user_id", "=", $current_user)
+                        ->orderBy('created_at', 'desc')
+                        ->paginate(10);
+        foreach($checks as $check)
+        {
+            $posts = Post::where("user_id", $check->check_id)
+                        ->orderBy('created_at', 'desc')
+                        ->paginate(10);
+            return view('users.index', ['user' => $user, 'current_user'=> $current_user, 'checks'=> $checks, 'posts'=>$posts]);
+        }
+        return view('users.index', ['user' => $user, 'current_user'=> $current_user, 'checks'=> $checks]);
     }
     public function show($id)
     {
         $user = User::find($id);
         $current_user = Auth::id();
-        $posts = Post::where('user_id', '=', $current_user)->get();
-        $other_posts = Post::where('user_id', '=', $id)->get();
+        $posts = Post::where('user_id', '=', $current_user)->orderBy('created_at', 'desc')->get();
+        $other_posts = Post::where('user_id', '=', $id)->orderBy('created_at', 'desc')->get();
         $check = Check::where('user_id', '=', $current_user)
                     ->where('check_id', '=', $id)
                     ->first();

@@ -21,7 +21,7 @@ div.post-user{
 div.post-user h4{
     overflow: auto;
     width: 220px;
-    height: 40px;
+    height: 60px;
 }
 img.post-show-profile-img{
     margin-right: 20px;
@@ -38,7 +38,7 @@ img.post-show-img{
 }
 div.post-title{
     overflow: auto;
-    height: 40px;
+    height: 60px;
     width: 400px;
     margin-left: 5%;
     padding-top: 2%;
@@ -94,6 +94,7 @@ a.card-post-a{
 }
 p.user-post-card-img img{
     width: 300px;
+    height: 200px;
     border-radius: 10px;
 }
 div.user-post-card-body{
@@ -111,6 +112,18 @@ div.user-post-card-name{
     padding: 5px;
     height: 40px;
     overflow: hidden;
+}
+p.post-profile-no-img{
+    text-align: center;
+    background-color: gray;
+    color: black;
+    height: 30px;
+    width: 90px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+div.post-page-profile-name{
+    width: 50%;
 }
 
 /*チェックボタン*/
@@ -148,6 +161,7 @@ div.search-post-img{
 }
 p.home-card-img{
     width: 300px;
+    height: 200px;
 }
 div.no-search-post{
     text-align: center;

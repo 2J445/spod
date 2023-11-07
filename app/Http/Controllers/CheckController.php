@@ -29,7 +29,8 @@ class CheckController extends Controller
       $current_user = auth()->user();
       $posts = Post::where('user_id', '=', $current_user)->get();
       $post = Post::find($post_id);
-      return view('posts.show', ['user' => $user, 'current_user'=> $current_user, 'post' => $post, 'check'=> $check])->with('flash_message', 'チェック登録しました');
+      $user_posts = Post::where('user_id', '=', $post->user_id)->get();
+      return view('posts.show', ['user' => $user, 'current_user'=> $current_user, 'post' => $post, 'check'=> $check, 'user_posts'=>$user_posts])->with('flash_message', 'チェック登録しました');
     }
     protected function validator(array $data)
     {

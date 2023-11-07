@@ -15,23 +15,43 @@
                             @csrf
                             
                             <div class="input-form row mb-3">
+                              <label for="audio" class="col-md-4 col-form-label text-md-end">音声(ポッドキャスト音源)</label>
+                              <input type="file" name="audio"  class="col-md-6" required>
+                              @error('audio')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                              @enderror
+                            </div>
+                            
+                            <div class="input-form row mb-3">
                               <label for="name" class="col-md-4 col-form-label text-md-end">タイトル</label>
                               <input name="name" class="col-md-6" required>
+                              @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                              @enderror
                             </div>
                             
                             <div class="input-form row mb-3">
-                              <label for="audio" class="col-md-4 col-form-label text-md-end">音声</label>
-                              <input type="file" name="audio"  class="col-md-6" required>
-                            </div>
-                            
-                            <div class="input-form row mb-3">
-                              <label for="image" class="col-md-4 col-form-label text-md-end">イメージ</label>
+                              <label for="image" class="col-md-4 col-form-label text-md-end">イメージ(推奨：300px×200px)</label>
                               <input type="file" name="image"  class="col-md-6" required>
+                              @error('image')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                              @enderror
                             </div>
                             
                             <div class="input-form row mb-3">
                               <label for="detail" class="col-md-4 col-form-label text-md-end">詳細</label>
                               <textarea name="detail" rows="4" cols="40"  class="col-md-6"></textarea>
+                              @error('detail')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                              @enderror
                             </div>
                             
                             <div class="input-form col-md-6 offset-md-4">
