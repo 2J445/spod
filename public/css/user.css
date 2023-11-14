@@ -172,6 +172,54 @@ p.checker-profile-no-img{
     margin-right: 10px;
 }
 
+/*ユーザーリスト*/
+div.users-list-title{
+    text-align: center;
+    color: limegreen;
+}
+div.users-list-card{
+    width: 80%;
+    height: 280px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-left: 10%;
+    margin-bottom: 30px;
+}
+div.user-list-header-card{
+    display: flex;
+}
+p.user-list-profile-no-img{
+    background-color: gray;
+    color: black;
+    width: 120px;
+    height: 40px;
+    text-align: center;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+button.user-list-warning-btn{
+    height: 40px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+button.user-list-destroy-btn{
+    height: 40px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+div.user-list-card-self-introducition{
+    overflow: auto;
+    color: white;
+    background-color: #333333;
+    height: 80px;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 /*最新チェック配信*/
 div.checker-list-title{
     text-align: center;
@@ -208,7 +256,7 @@ div.checker-card-self-introducition{
     overflow: auto;
     color: white;
     background-color: #333333;
-    height: 100px;
+    height: 80px;
     border-radius: 10px;
     padding-top: 10px;
     padding-bottom: 10px;

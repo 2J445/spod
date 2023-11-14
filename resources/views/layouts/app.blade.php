@@ -76,7 +76,11 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a href="{{ route('user.index') }}" class="dropdown-item">チェッカー配信</a>
+                                    @if($user->admin == true)
+                                        <a href="{{ route('user.index') }}" class="dropdown-item">ユーザー一覧</a>
+                                    @else
+                                        <a href="{{ route('user.index') }}" class="dropdown-item">チェッカー配信</a>
+                                    @endif
                                     <a href="{{ route('user.show', $user->id) }}" class="dropdown-item">マイページ</a>
                                     <a href="{{ route('post.create') }}" class="dropdown-item">アップロード</a>
                                     <a href="{{ route('user.edit', $user->id) }}" class="dropdown-item">設定</a>

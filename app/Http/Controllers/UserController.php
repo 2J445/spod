@@ -21,14 +21,15 @@ class UserController extends Controller
         $checks = Check::where("user_id", "=", $current_user)
                         ->orderBy('created_at', 'desc')
                         ->paginate(10);
+        $users = User::paginate(10);
         foreach($checks as $check)
         {
             $posts = Post::where("user_id", $check->check_id)
                         ->orderBy('created_at', 'desc')
                         ->paginate(10);
-            return view('users.index', ['user' => $user, 'current_user'=> $current_user, 'checks'=> $checks, 'posts'=>$posts]);
+            return view('users.index', ['user' => $user, 'current_user'=> $current_user, 'checks'=> $checks, 'posts'=>$posts, 'users'=>$users]);
         }
-        return view('users.index', ['user' => $user, 'current_user'=> $current_user, 'checks'=> $checks]);
+        return view('users.index', ['user' => $user, 'current_user'=> $current_user, 'checks'=> $checks, 'users'=>$users]);
     }
     public function show($id)
     {
@@ -68,11 +69,29 @@ class UserController extends Controller
     public function destroy($id)
     {
         $current_user = Auth::id();
-        $user = Auth::user();
+        $user = User::find($id);
         $post = Post::where('user_id', '=', $current_user)->get();
         $user->delete();
         $post->each->delete();
         \Session::flash('flash_message', '退会しました。');
+        return redirect('/');
+    }
+    public function regulation($id)
+    {
+        $user = User::find($id);
+        $current_user = Auth::id();
+        $user->is_use = true;
+        $user->save();
+        \Session::flash('flash_message', '利用制限を掛けました。');
+        return redirect('/');
+    }
+    public function cancell_regulation($id)
+    {
+        $user = User::find($id);
+        $current_user = Auth::id();
+        $user->is_use = false;
+        $user->save();
+        \Session::flash('flash_message', '利用制限を解除しました。');
         return redirect('/');
     }
 }
