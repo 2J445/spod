@@ -6,10 +6,6 @@
         "build": "vite build",
         "heroku-postbuild": "npm run prod"
     },
-    "engines": {
-        "node": "16.x",
-        "npm": "9.x"
-      },
     "devDependencies": {
         "@popperjs/core": "^2.11.6",
         "@vitejs/plugin-vue": "^4.0.0",
