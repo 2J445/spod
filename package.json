@@ -1,10 +1,9 @@
 {
     "private": true,
-    "type": "module",
     "scripts": {
         "dev": "vite",
-        "build": "vite build"
-        "heroku-postbuild": "npm run prod", //この記述を追加する
+        "build": "vite build",
+        "heroku-postbuild": "npm run prod"
     },
     "devDependencies": {
         "@popperjs/core": "^2.11.6",
