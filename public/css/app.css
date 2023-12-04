@@ -20,7 +20,7 @@ nav{
 }
 a#navbarDropdown{
     font-size: 18px;
-    width: 100px;
+    width: 50px;
     overflow: hidden;
 }
 a.navbar-brand{
