@@ -15,7 +15,7 @@ class UserSeeder extends Seeder
     {
         User::create([
             'name' => 'Spod公式アカウント',
-            'email' => 'tsunageru.com@gmail.com',
+            'email' => 'tjsg06@star.cims.jp',
             'password' => 'ts060544051998',
             'admin' => 1,
         ]);
