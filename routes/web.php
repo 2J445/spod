@@ -32,10 +32,6 @@ Route::post('/user/{id}/regulation', [App\Http\Controllers\UserController::class
 Route::get('/user/{id}/cancell_regulation', [App\Http\Controllers\UserController::class, 'cancell_regulation'])->name('user.cancell_regulation');
 Route::post('/user/{id}/cancell_regulation', [App\Http\Controllers\UserController::class, 'cancell_regulation'])->name('user.cancell_regulation');
 Route::resource('user', App\Http\Controllers\UserController::class);
-//Route::get('/users/{id}', [App\Http\Controllers\UserController::class, 'show'])->name('user.show');
-//Route::get('/user/edit/{id}', [App\Http\Controllers\UserController::class, 'edit']); //ユーザー編集
-//Route::get('/user/destroy_confirm/{id}', [App\Http\Controllers\UserController::class, 'destroy_confirm']); //ユーザー退会
-//Route::post('/user/update/{id}', [App\Http\Controllers\UserController::class, 'update']); //ユーザーUPDATE
 
 //サインアップ・ログイン後の遷移
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
