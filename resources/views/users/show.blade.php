@@ -2,7 +2,7 @@
 
 @section('content')
     @auth
-      @if($current_user == $user->id)
+      @if($current_user == $user)
         <div class="mypage container">
             <div class="row justify-content-center">
               
