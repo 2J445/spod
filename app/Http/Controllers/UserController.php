@@ -50,7 +50,7 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $user = Auth::user();
-        $current_user = Auth::user();
+        $current_user = Auth::id();
         $posts = Post::where('user_id', '=', $current_user)->get();
         if($request->profile_image){
             $user->profile_image = $request->profile_image->store('profile_images');
