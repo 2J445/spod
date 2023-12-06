@@ -9,7 +9,7 @@
                 <div class="mypage-body">
                   <div class="mypage-header">
                     <div class="mypage-name">
-                      @if($user->profile_image)
+                      @if(!is_null($user->profile_image))
                         <p><img src="{{ asset('storage/' . $user['profile_image']) }}" width="100" height="40" class="user-show-profile-img"></p>
                       @else
                         <p class="user-profile-header-no-img">No Image</p>
@@ -49,7 +49,7 @@
                                     <p>{{ $post['name'] }}</p>
                                   </div>
                                   <div class="user-card-name">
-                                    @if($user->profile_image)
+                                    @if(!is_null($user->profile_image))
                                       <p><img src="{{ asset('storage/' . $user['profile_image']) }}" width="100" height="40" class="user-show-profile-img"></p>
                                     @else
                                       <p class="user-profile-no-img">No Image</p>
@@ -73,7 +73,7 @@
                 <div class="mypage-body">
                   <div class="mypage-header">
                     <div class="mypage-name">
-                      @if($user->profile_image)
+                      @if(!is_null($user->profile_image))
                         <p><img src="{{ asset('storage/' . $user['profile_image']) }}" width="100" height="40" class="user-show-profile-img"></p>
                       @else
                         <p class="user-profile-header-no-img">No Image</p>
@@ -125,7 +125,7 @@
                                     <p>{{ $post['name'] }}</p>
                                   </div>
                                   <div class="user-card-name">
-                                    @if($user->profile_image)
+                                    @if(!is_null($user->profile_image))
                                       <p><img src="{{ asset('storage/' . $user['profile_image']) }}" width="100" height="40" class="user-show-profile-img"></p>
                                     @else
                                       <p class="user-profile-no-img">No Image</p>
@@ -150,7 +150,7 @@
               <div class="mypage-body">
                 <div class="mypage-header">
                   <div class="mypage-name">
-                    @if($user->profile_image)
+                    @if(!is_null($user->profile_image))
                       <p><img src="{{ asset('storage/' . $user['profile_image']) }}" width="100" height="40" class="user-show-profile-img"></p>
                     @else
                       <p class="user-profile-header-no-img">No Image</p>
@@ -190,7 +190,7 @@
                                   <p>{{ $post['name'] }}</p>
                                 </div>
                                 <div class="user-card-name">
-                                  @if($user->profile_image)
+                                  @if(!is_null($user->profile_image))
                                     <p><img src="{{ asset('storage/' . $user['profile_image']) }}" width="100" height="40" class="user-show-profile-img"></p>
                                   @else
                                     <p class="user-profile-no-img">No Image</p>
