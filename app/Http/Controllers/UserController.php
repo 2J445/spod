@@ -49,22 +49,23 @@ class UserController extends Controller
     }
     public function update(Request $request, $id)
     {
-        $user = Auth::user();
+        $myUser = Auth::user();
         $current_user = Auth::id();
         $posts = Post::where('user_id', '=', $current_user)->get();
         if($request->profile_image){
-            $user->profile_image = $request->profile_image->store('profile_images');
+            $myUser->profile_image = $request->profile_image->store('profile_images');
         }
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->self_introduction = $request->self_introduction;
+        $myUser->name = $request->name;
+        $myUser->email = $request->email;
+        $myUser->self_introduction = $request->self_introduction;
         if($request->password){
-            $user->password = $request->password;
-            $user->save();
+            $myUser->password = $request->password;
+            $myUser->save();
+            $user = $myUser;
             return view('users.show', ['user' => $user, 'current_user'=> $current_user, 'posts' => $posts])->with('ユーザー情報を更新しました');
         }
-        $user->save();
-        $myUser = Auth::user();
+        $myUser->save();
+        $user = $myUser;
         return view('users.show', ['user' => $user,  'current_user'=> $current_user, 'posts' => $posts])->with('ユーザー情報を更新しました');
     }
     public function destroy($id)
