@@ -34,7 +34,7 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-        $current_user = Auth::user();
+        $current_user = Auth::id();
         $posts = Post::where('user_id', '=', $current_user)->orderBy('created_at', 'desc')->get();
         $other_posts = Post::where('user_id', '=', $id)->orderBy('created_at', 'desc')->get();
         $check = Check::where('user_id', '=', $current_user)
