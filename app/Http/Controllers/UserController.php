@@ -61,17 +61,9 @@ class UserController extends Controller
         if($request->password){
             $user->password = $request->password;
             $user->save();
-            if(is_null( $user))
-            {
-                
-            }
             return view('users.show', ['user' => $user, 'current_user'=> $current_user, 'posts' => $posts])->with('ユーザー情報を更新しました');
         }
         $user->save();
-        if(is_null( $user))
-            {
-                
-            }
         return view('users.show', ['user' => $user, 'current_user'=> $current_user, 'posts' => $posts])->with('ユーザー情報を更新しました');
     }
     public function destroy($id)
