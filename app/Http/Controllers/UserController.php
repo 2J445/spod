@@ -17,7 +17,7 @@ class UserController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $current_user = Auth::id();
+        $current_user = Auth::user();
         $checks = Check::where("user_id", "=", $current_user)
                         ->orderBy('created_at', 'desc')
                         ->paginate(10);
@@ -34,7 +34,7 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-        $current_user = Auth::id();
+        $current_user = Auth::user();
         $posts = Post::where('user_id', '=', $current_user)->orderBy('created_at', 'desc')->get();
         $other_posts = Post::where('user_id', '=', $id)->orderBy('created_at', 'desc')->get();
         $check = Check::where('user_id', '=', $current_user)
@@ -50,7 +50,7 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $user = Auth::user();
-        $current_user = Auth::id();
+        $current_user = Auth::user();
         $posts = Post::where('user_id', '=', $current_user)->get();
         if($request->profile_image){
             $user->profile_image = $request->profile_image->store('profile_images');
@@ -61,10 +61,12 @@ class UserController extends Controller
         if($request->password){
             $user->password = $request->password;
             $user->save();
+            $myUser = Auth::user();
             return view('users.show', ['user' => $user, 'current_user'=> $current_user, 'posts' => $posts])->with('ユーザー情報を更新しました');
         }
         $user->save();
-        return view('users.show', ['user' => $user, 'current_user'=> $current_user, 'posts' => $posts])->with('ユーザー情報を更新しました');
+        $myUser = Auth::user();
+        return view('users.show', ['user' => $user,  'current_user'=> $current_user, 'posts' => $posts])->with('ユーザー情報を更新しました');
     }
     public function destroy($id)
     {
