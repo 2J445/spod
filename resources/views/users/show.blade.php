@@ -2,7 +2,6 @@
 
 @section('content')
     @auth
-    @if($user)
       @if($current_user == $user->id)
         <div class="mypage container">
             <div class="row justify-content-center">
@@ -10,6 +9,11 @@
                 <div class="mypage-body">
                   <div class="mypage-header">
                     <div class="mypage-name">
+                      @if($user->profile_image)
+                        <p><img src="{{ asset('storage/' . $user['profile_image']) }}" width="100" height="40" class="user-show-profile-img"></p>
+                      @else
+                        <p class="user-profile-header-no-img">No Image</p>
+                      @endif
                       <div class="user-page-show-name">
                         <h2>{{ $user->name }}</h2>
                       </div>
@@ -45,6 +49,11 @@
                                     <p>{{ $post['name'] }}</p>
                                   </div>
                                   <div class="user-card-name">
+                                    @if($user->profile_image)
+                                      <p><img src="{{ asset('storage/' . $user['profile_image']) }}" width="100" height="40" class="user-show-profile-img"></p>
+                                    @else
+                                      <p class="user-profile-no-img">No Image</p>
+                                    @endif
                                     <div class="user-page-profile-name">
                                       <p>{{ $post->user->name }}</p>
                                     </div>
@@ -64,6 +73,11 @@
                 <div class="mypage-body">
                   <div class="mypage-header">
                     <div class="mypage-name">
+                      @if($user->profile_image)
+                        <p><img src="{{ asset('storage/' . $user['profile_image']) }}" width="100" height="40" class="user-show-profile-img"></p>
+                      @else
+                        <p class="user-profile-header-no-img">No Image</p>
+                      @endif
                       <div class="user-page-show-name">
                         <h2>{{ $user->name }}</h2>
                       </div>
@@ -111,6 +125,11 @@
                                     <p>{{ $post['name'] }}</p>
                                   </div>
                                   <div class="user-card-name">
+                                    @if($user->profile_image)
+                                      <p><img src="{{ asset('storage/' . $user['profile_image']) }}" width="100" height="40" class="user-show-profile-img"></p>
+                                    @else
+                                      <p class="user-profile-no-img">No Image</p>
+                                    @endif
                                     <div class="user-page-profile-name">
                                       <p>{{ $post->user->name }}</p>
                                     </div>
@@ -131,6 +150,11 @@
               <div class="mypage-body">
                 <div class="mypage-header">
                   <div class="mypage-name">
+                    @if($user->profile_image)
+                      <p><img src="{{ asset('storage/' . $user['profile_image']) }}" width="100" height="40" class="user-show-profile-img"></p>
+                    @else
+                      <p class="user-profile-header-no-img">No Image</p>
+                    @endif
                     <div class="user-page-show-name">
                         <h2>{{ $user->name }}</h2>
                       </div>
@@ -166,6 +190,11 @@
                                   <p>{{ $post['name'] }}</p>
                                 </div>
                                 <div class="user-card-name">
+                                  @if($user->profile_image)
+                                    <p><img src="{{ asset('storage/' . $user['profile_image']) }}" width="100" height="40" class="user-show-profile-img"></p>
+                                  @else
+                                    <p class="user-profile-no-img">No Image</p>
+                                  @endif
                                   <div class="user-page-profile-name">
                                       <p>{{ $post->user->name }}</p>
                                     </div>
@@ -179,6 +208,5 @@
               </div>
           </div>
       </div>
-    @endif
     @endauth
 @endsection
