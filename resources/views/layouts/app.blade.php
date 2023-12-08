@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>スポーツ専門ポッドキャストサービス【Spod】</title>
+    <title>【Spod】スポーツ専門ポッドキャストサービス</title>
     <link rel="shortcut icon" href="{{ asset('image/logo2.png') }}">
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
