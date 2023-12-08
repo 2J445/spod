@@ -34,7 +34,7 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-        $current_user = Auth::id();
+        $current_user = Auth::user();
         $posts = Post::where('user_id', '=', $current_user)->orderBy('created_at', 'desc')->get();
         $other_posts = Post::where('user_id', '=', $id)->orderBy('created_at', 'desc')->get();
         $check = Check::where('user_id', '=', $current_user)
@@ -45,28 +45,29 @@ class UserController extends Controller
     public function edit(Request $request, $id)
     {
         $user = Auth::user();
+        $current_user = Auth::user();
         return view('users.edit', compact('user'));
     }
     public function update(Request $request, $id)
     {
-        $myUser = Auth::user();
-        $current_user = Auth::id();
+        $user = Auth::user();
+        $current_user = Auth::user();
         $posts = Post::where('user_id', '=', $current_user)->get();
         if($request->profile_image){
-            $myUser->profile_image = $request->profile_image->store('profile_images');
+            $user->profile_image = $request->profile_image->store('profile_images');
         }
-        $myUser->name = $request->name;
-        $myUser->email = $request->email;
-        $myUser->self_introduction = $request->self_introduction;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->self_introduction = $request->self_introduction;
         if($request->password){
-            $myUser->password = $request->password;
-            $myUser->save();
-            $user = $myUser;
-            return view('users.show', ['user' => $user, 'current_user'=> $current_user, 'posts' => $posts])->with('ユーザー情報を更新しました');
+            $user->password = $request->password;
+            $user->save();
+            \Session::flash('flash_message', 'ユーザー情報を更新しました');
+            return view('users.show', ['user' => $user, 'current_user'=> $current_user, 'posts' => $posts]);
         }
-        $myUser->save();
-        $user = $myUser;
-        return view('users.show', ['user' => $user,  'current_user'=> $current_user, 'posts' => $posts])->with('ユーザー情報を更新しました');
+        $user->save();
+        \Session::flash('flash_message', 'ユーザー情報を更新しました');
+        return view('users.show', ['user' => $user,  'current_user'=> $current_user, 'posts' => $posts]);
     }
     public function destroy($id)
     {
