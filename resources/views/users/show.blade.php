@@ -9,11 +9,11 @@
                 <div class="mypage-body">
                   <div class="mypage-header">
                     <div class="mypage-name">
-                      @if($user->profile_image)
+                      @isset($user->profile_image)
                         <p><img src="{{ asset('storage/' . $user['profile_image']) }}" width="100" height="40" class="user-show-profile-img"></p>
                       @else
                         <p class="user-profile-header-no-img">No Image</p>
-                      @endif
+                      @endisset
                       <div class="user-page-show-name">
                         <h2>{{ $user->name }}</h2>
                       </div>
@@ -73,11 +73,11 @@
                 <div class="mypage-body">
                   <div class="mypage-header">
                     <div class="mypage-name">
-                      @if($user->profile_image)
+                      @isset($user->profile_image)
                         <p><img src="{{ asset('storage/' . $user['profile_image']) }}" width="100" height="40" class="user-show-profile-img"></p>
                       @else
                         <p class="user-profile-header-no-img">No Image</p>
-                      @endif
+                      @endisset
                       <div class="user-page-show-name">
                         <h2>{{ $user->name }}</h2>
                       </div>
@@ -150,11 +150,11 @@
               <div class="mypage-body">
                 <div class="mypage-header">
                   <div class="mypage-name">
-                    @if($user->profile_image)
-                      <p><img src="{{ asset('storage/' . $user['profile_image']) }}" width="100" height="40" class="user-show-profile-img"></p>
-                    @else
-                      <p class="user-profile-header-no-img">No Image</p>
-                    @endif
+                    @isset($user->profile_image)
+                        <p><img src="{{ asset('storage/' . $user['profile_image']) }}" width="100" height="40" class="user-show-profile-img"></p>
+                      @else
+                        <p class="user-profile-header-no-img">No Image</p>
+                      @endisset
                     <div class="user-page-show-name">
                         <h2>{{ $user->name }}</h2>
                       </div>
