@@ -9,7 +9,7 @@
                 <div class="mypage-body">
                   <div class="mypage-header">
                     <div class="mypage-name">
-                      @if ($user instanceof App\Models\User && $user->profile_image)
+                      @if($user->profile_image)
                         <p><img src="{{ asset('storage/' . $user['profile_image']) }}" width="100" height="40" class="user-show-profile-img"></p>
                       @else
                         <p class="user-profile-header-no-img">No Image</p>
