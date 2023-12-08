@@ -50,24 +50,22 @@ class UserController extends Controller
     }
     public function update(Request $request, $id)
     {
-        $myUser = Auth::user();
+        $user = Auth::user();
         $current_user = Auth::user();
         $posts = Post::where('user_id', '=', $current_user)->get();
-        $myUser->name = $request->name;
-        $myUser->email = $request->email;
-        $myUser->self_introduction = $request->self_introduction;
         if($request->profile_image){
-            $myUser->profile_image = $request->profile_image->store('profile_images');
+            $user->profile_image = $request->profile_image->store('profile_images');
         }
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->self_introduction = $request->self_introduction;
         if($request->password){
-            $myUser->password = $request->password;
-            $myUser->save();
-            $user = $myUser;
-            return view('users.show', ['user' => $user, 'current_user'=> $current_user, 'posts' => $posts]);
+            $user->password = $request->password;
+            $user->save();
+            return redirect('/');
         }
-        $myUser->save();
-        $user = $myUser;
-        return view('users.show', ['user' => $user,  'current_user'=> $current_user, 'posts' => $posts]);
+        $user->save();
+        return redirect('/');
     }
     public function destroy($id)
     {
