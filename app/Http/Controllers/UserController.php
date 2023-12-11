@@ -53,12 +53,12 @@ class UserController extends Controller
         $user = Auth::user();
         $current_user = Auth::user();
         $posts = Post::where('user_id', '=', $current_user)->get();
-        if($request->profile_image){
-            $user->profile_image = $request->profile_image->store('profile_images');
-        }
         $user->name = $request->name;
         $user->email = $request->email;
         $user->self_introduction = $request->self_introduction;
+        if($request->profile_image){
+            $user->profile_image = $request->profile_image->store('profile_images');
+        }
         if($request->password){
             $user->password = $request->password;
             $user->save();
