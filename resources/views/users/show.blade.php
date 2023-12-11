@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @auth
+    @isset($user)
       @if($current_user == $user)
         <div class="mypage container">
             <div class="row justify-content-center">
@@ -208,5 +208,5 @@
               </div>
           </div>
       </div>
-    @endauth
+    @endisset
 @endsection
