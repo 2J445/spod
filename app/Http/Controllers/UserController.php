@@ -45,19 +45,20 @@ class UserController extends Controller
     public function edit(Request $request, $id)
     {
         $user = Auth::user();
-        var_dump($user);
         $current_user = Auth::user();
         return view('users.edit', compact('user'));
     }
     public function update(Request $request, $id)
     {
         $user = Auth::user();
-        dd($user);
         $current_user = Auth::user();
         $posts = Post::where('user_id', '=', $current_user)->get();
         $user->name = $request->name;
         $user->email = $request->email;
         $user->self_introduction = $request->self_introduction;
+        if($request->profile_image){
+            $user->profile_image = $request->profile_image->store('profile_images');
+        }
         if($request->password){
             $user->password = $request->password;
             $user->save();

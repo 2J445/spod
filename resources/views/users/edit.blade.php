@@ -5,6 +5,18 @@
     <form method="POST" action="/user/update/{{ $user->user_id }}" enctype="multipart/form-data">
         @method('put')
          @csrf
+        <div class="row mb-3">
+            <label for="profile_image" class="col-md-4 col-form-label text-md-end">{{ __('プロフィール画像') }}</label>
+
+            <div class="col-md-6">
+                <input id="profile_image" type="file" class="form-control" name="profile_image" value="{{ $user->profile_image }}" autocomplete="profile_image" autofocus>
+                    @error('profile_image')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+        </div>
         
         <div class="row mb-3">
             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('アカウント名/チャンネル名') }}</label>
