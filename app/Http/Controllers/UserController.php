@@ -52,7 +52,7 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $user = Auth::user();
-        var_dump($user);
+        dd($user);
         $current_user = Auth::user();
         $posts = Post::where('user_id', '=', $current_user)->get();
         $user->name = $request->name;
