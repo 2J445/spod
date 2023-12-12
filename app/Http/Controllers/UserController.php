@@ -62,10 +62,12 @@ class UserController extends Controller
         if($request->password){
             $user->password = $request->password;
             $user->save();
-            return view('users.show', ['user' => $user, 'current_user'=> $current_user, 'posts' => $posts]);
+            print_r($user);
+             return redirect('/');
         }
         $user->save();
-        return view('users.show', ['user' => $user,  'current_user'=> $current_user, 'posts' => $posts]);
+        print_r($user);
+         return redirect('/');
     }
     public function destroy($id)
     {
