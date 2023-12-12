@@ -58,9 +58,6 @@ class UserController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->self_introduction = $request->self_introduction;
-        if($request->profile_image){
-            $user->profile_image = $request->profile_image->store('profile_images');
-        }
         if($request->password){
             $user->password = $request->password;
             $user->save();
