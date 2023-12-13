@@ -51,7 +51,7 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $user = Auth::user();
-        error_log(var_export($user, true), 3, '/tmp/my-errors.log');
+        error_log(var_export($user, true), 3, '"./log.txt"');
         $current_user = Auth::user();
         $posts = Post::where('user_id', '=', $current_user)->get();
         $user->name = $request->name;
