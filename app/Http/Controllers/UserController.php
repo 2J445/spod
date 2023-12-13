@@ -51,6 +51,7 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $user = Auth::user();
+        dd($user);
         $current_user = Auth::user();
         $posts = Post::where('user_id', '=', $current_user)->get();
         $user->name = $request->name;
@@ -62,12 +63,10 @@ class UserController extends Controller
         if($request->password){
             $user->password = $request->password;
             $user->save();
-            Log::debug(print_r($user, true));
-            return redirect('/');
+            return view('users.show', ['user' => $user, 'current_user'=> $current_user, 'posts' => $posts]);
         }
         $user->save();
-        Log::debug(print_r($user, true));
-       return redirect('/');
+        return view('users.show', ['user' => $user,  'current_user'=> $current_user, 'posts' => $posts]);
     }
     public function destroy($id)
     {
