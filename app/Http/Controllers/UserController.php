@@ -51,7 +51,6 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $user = Auth::user();
-        error_log(var_export($user, true), 3, 'php_errors.log');
         $current_user = Auth::user();
         $posts = Post::where('user_id', '=', $current_user)->get();
         $user->name = $request->name;
@@ -63,9 +62,13 @@ class UserController extends Controller
         if($request->password){
             $user->password = $request->password;
             $user->save();
+            var_dump($user);
+            exit();
             return view('users.show', ['user' => $user, 'current_user'=> $current_user, 'posts' => $posts]);
         }
         $user->save();
+        var_dump($user);
+        exit();
         return view('users.show', ['user' => $user,  'current_user'=> $current_user, 'posts' => $posts]);
     }
     public function destroy($id)
