@@ -62,13 +62,11 @@ class UserController extends Controller
         if($request->password){
             $user->password = $request->password;
             $user->save();
-            var_dump($user);
-            exit();
+            error_log(var_export($user, true), 3, 'error_log');
             return view('users.show', ['user' => $user, 'current_user'=> $current_user, 'posts' => $posts]);
         }
         $user->save();
-        var_dump($user);
-        exit();
+        error_log(var_export($user, true), 3, 'error_log');
         return view('users.show', ['user' => $user,  'current_user'=> $current_user, 'posts' => $posts]);
     }
     public function destroy($id)
