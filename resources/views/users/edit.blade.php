@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="user-form">
-    <form method="POST" action="/user/update/{{ $user->user_id }}" enctype="multipart/form-data">
+    <form method="POST" action="/user/update" enctype="multipart/form-data">
         @method('put')
          @csrf
         <div class="row mb-3">

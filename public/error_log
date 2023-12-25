@@ -515,4 +515,416 @@ App\Models\User::__set_state(array(
   ),
    'rememberTokenName' => 'remember_token',
    'accessToken' => NULL,
+))App\Models\User::__set_state(array(
+   'connection' => 'mysql',
+   'table' => 'users',
+   'primaryKey' => 'id',
+   'keyType' => 'int',
+   'incrementing' => true,
+   'with' => 
+  array (
+  ),
+   'withCount' => 
+  array (
+  ),
+   'preventsLazyLoading' => false,
+   'perPage' => 15,
+   'exists' => true,
+   'wasRecentlyCreated' => false,
+   'escapeWhenCastingToString' => false,
+   'attributes' => 
+  array (
+    'id' => 2,
+    'profile_image' => NULL,
+    'name' => 'Sports Cast',
+    'self_introduction' => 'bbb',
+    'email' => 'test1@example.com',
+    'email_verified_at' => NULL,
+    'password' => '$2y$10$.x3FiUYSuqKLzO25LjA20unNtzGmLkw4Ip.YGTBO2/nuwGqabOOeG',
+    'is_use' => 0,
+    'admin' => 0,
+    'remember_token' => NULL,
+    'created_at' => '2023-12-04 11:32:04',
+    'updated_at' => '2023-12-25 13:29:57',
+  ),
+   'original' => 
+  array (
+    'id' => 2,
+    'profile_image' => NULL,
+    'name' => 'Sports Cast',
+    'self_introduction' => 'bbb',
+    'email' => 'test1@example.com',
+    'email_verified_at' => NULL,
+    'password' => '$2y$10$.x3FiUYSuqKLzO25LjA20unNtzGmLkw4Ip.YGTBO2/nuwGqabOOeG',
+    'is_use' => 0,
+    'admin' => 0,
+    'remember_token' => NULL,
+    'created_at' => '2023-12-04 11:32:04',
+    'updated_at' => '2023-12-25 13:29:57',
+  ),
+   'changes' => 
+  array (
+  ),
+   'casts' => 
+  array (
+    'email_verified_at' => 'datetime',
+    'password' => 'hashed',
+    'is_use' => 'boolean',
+    'admin' => 'boolean',
+  ),
+   'classCastCache' => 
+  array (
+  ),
+   'attributeCastCache' => 
+  array (
+  ),
+   'dateFormat' => NULL,
+   'appends' => 
+  array (
+  ),
+   'dispatchesEvents' => 
+  array (
+  ),
+   'observables' => 
+  array (
+  ),
+   'relations' => 
+  array (
+  ),
+   'touches' => 
+  array (
+  ),
+   'timestamps' => true,
+   'usesUniqueIds' => false,
+   'hidden' => 
+  array (
+    0 => 'password',
+    1 => 'remember_token',
+  ),
+   'visible' => 
+  array (
+  ),
+   'fillable' => 
+  array (
+    0 => 'name',
+    1 => 'email',
+    2 => 'password',
+    3 => 'is_use',
+    4 => 'admin',
+  ),
+   'guarded' => 
+  array (
+    0 => '*',
+  ),
+   'rememberTokenName' => 'remember_token',
+   'accessToken' => NULL,
+))App\Models\User::__set_state(array(
+   'connection' => 'mysql',
+   'table' => 'users',
+   'primaryKey' => 'id',
+   'keyType' => 'int',
+   'incrementing' => true,
+   'with' => 
+  array (
+  ),
+   'withCount' => 
+  array (
+  ),
+   'preventsLazyLoading' => false,
+   'perPage' => 15,
+   'exists' => true,
+   'wasRecentlyCreated' => false,
+   'escapeWhenCastingToString' => false,
+   'attributes' => 
+  array (
+    'id' => 2,
+    'profile_image' => NULL,
+    'name' => 'Sports Cast',
+    'self_introduction' => 'bbb',
+    'email' => 'test1@example.com',
+    'email_verified_at' => NULL,
+    'password' => '$2y$10$.x3FiUYSuqKLzO25LjA20unNtzGmLkw4Ip.YGTBO2/nuwGqabOOeG',
+    'is_use' => 0,
+    'admin' => 0,
+    'remember_token' => NULL,
+    'created_at' => '2023-12-04 11:32:04',
+    'updated_at' => '2023-12-25 13:29:57',
+  ),
+   'original' => 
+  array (
+    'id' => 2,
+    'profile_image' => NULL,
+    'name' => 'Sports Cast',
+    'self_introduction' => 'bbb',
+    'email' => 'test1@example.com',
+    'email_verified_at' => NULL,
+    'password' => '$2y$10$.x3FiUYSuqKLzO25LjA20unNtzGmLkw4Ip.YGTBO2/nuwGqabOOeG',
+    'is_use' => 0,
+    'admin' => 0,
+    'remember_token' => NULL,
+    'created_at' => '2023-12-04 11:32:04',
+    'updated_at' => '2023-12-25 13:29:57',
+  ),
+   'changes' => 
+  array (
+  ),
+   'casts' => 
+  array (
+    'email_verified_at' => 'datetime',
+    'password' => 'hashed',
+    'is_use' => 'boolean',
+    'admin' => 'boolean',
+  ),
+   'classCastCache' => 
+  array (
+  ),
+   'attributeCastCache' => 
+  array (
+  ),
+   'dateFormat' => NULL,
+   'appends' => 
+  array (
+  ),
+   'dispatchesEvents' => 
+  array (
+  ),
+   'observables' => 
+  array (
+  ),
+   'relations' => 
+  array (
+  ),
+   'touches' => 
+  array (
+  ),
+   'timestamps' => true,
+   'usesUniqueIds' => false,
+   'hidden' => 
+  array (
+    0 => 'password',
+    1 => 'remember_token',
+  ),
+   'visible' => 
+  array (
+  ),
+   'fillable' => 
+  array (
+    0 => 'name',
+    1 => 'email',
+    2 => 'password',
+    3 => 'is_use',
+    4 => 'admin',
+  ),
+   'guarded' => 
+  array (
+    0 => '*',
+  ),
+   'rememberTokenName' => 'remember_token',
+   'accessToken' => NULL,
+))App\Models\User::__set_state(array(
+   'connection' => 'mysql',
+   'table' => 'users',
+   'primaryKey' => 'id',
+   'keyType' => 'int',
+   'incrementing' => true,
+   'with' => 
+  array (
+  ),
+   'withCount' => 
+  array (
+  ),
+   'preventsLazyLoading' => false,
+   'perPage' => 15,
+   'exists' => true,
+   'wasRecentlyCreated' => false,
+   'escapeWhenCastingToString' => false,
+   'attributes' => 
+  array (
+    'id' => 2,
+    'profile_image' => NULL,
+    'name' => 'Sports Cast',
+    'self_introduction' => 'bbb',
+    'email' => 'test1@example.com',
+    'email_verified_at' => NULL,
+    'password' => '$2y$10$.x3FiUYSuqKLzO25LjA20unNtzGmLkw4Ip.YGTBO2/nuwGqabOOeG',
+    'is_use' => 0,
+    'admin' => 0,
+    'remember_token' => NULL,
+    'created_at' => '2023-12-04 11:32:04',
+    'updated_at' => '2023-12-25 13:29:57',
+  ),
+   'original' => 
+  array (
+    'id' => 2,
+    'profile_image' => NULL,
+    'name' => 'Sports Cast',
+    'self_introduction' => 'bbb',
+    'email' => 'test1@example.com',
+    'email_verified_at' => NULL,
+    'password' => '$2y$10$.x3FiUYSuqKLzO25LjA20unNtzGmLkw4Ip.YGTBO2/nuwGqabOOeG',
+    'is_use' => 0,
+    'admin' => 0,
+    'remember_token' => NULL,
+    'created_at' => '2023-12-04 11:32:04',
+    'updated_at' => '2023-12-25 13:29:57',
+  ),
+   'changes' => 
+  array (
+  ),
+   'casts' => 
+  array (
+    'email_verified_at' => 'datetime',
+    'password' => 'hashed',
+    'is_use' => 'boolean',
+    'admin' => 'boolean',
+  ),
+   'classCastCache' => 
+  array (
+  ),
+   'attributeCastCache' => 
+  array (
+  ),
+   'dateFormat' => NULL,
+   'appends' => 
+  array (
+  ),
+   'dispatchesEvents' => 
+  array (
+  ),
+   'observables' => 
+  array (
+  ),
+   'relations' => 
+  array (
+  ),
+   'touches' => 
+  array (
+  ),
+   'timestamps' => true,
+   'usesUniqueIds' => false,
+   'hidden' => 
+  array (
+    0 => 'password',
+    1 => 'remember_token',
+  ),
+   'visible' => 
+  array (
+  ),
+   'fillable' => 
+  array (
+    0 => 'name',
+    1 => 'email',
+    2 => 'password',
+    3 => 'is_use',
+    4 => 'admin',
+  ),
+   'guarded' => 
+  array (
+    0 => '*',
+  ),
+   'rememberTokenName' => 'remember_token',
+   'accessToken' => NULL,
+))App\Models\User::__set_state(array(
+   'connection' => 'mysql',
+   'table' => 'users',
+   'primaryKey' => 'id',
+   'keyType' => 'int',
+   'incrementing' => true,
+   'with' => 
+  array (
+  ),
+   'withCount' => 
+  array (
+  ),
+   'preventsLazyLoading' => false,
+   'perPage' => 15,
+   'exists' => true,
+   'wasRecentlyCreated' => false,
+   'escapeWhenCastingToString' => false,
+   'attributes' => 
+  array (
+    'id' => 2,
+    'profile_image' => NULL,
+    'name' => 'Sports Cast',
+    'self_introduction' => 'bbb',
+    'email' => 'test1@example.com',
+    'email_verified_at' => NULL,
+    'password' => '$2y$10$.x3FiUYSuqKLzO25LjA20unNtzGmLkw4Ip.YGTBO2/nuwGqabOOeG',
+    'is_use' => 0,
+    'admin' => 0,
+    'remember_token' => NULL,
+    'created_at' => '2023-12-04 11:32:04',
+    'updated_at' => '2023-12-25 13:29:57',
+  ),
+   'original' => 
+  array (
+    'id' => 2,
+    'profile_image' => NULL,
+    'name' => 'Sports Cast',
+    'self_introduction' => 'bbb',
+    'email' => 'test1@example.com',
+    'email_verified_at' => NULL,
+    'password' => '$2y$10$.x3FiUYSuqKLzO25LjA20unNtzGmLkw4Ip.YGTBO2/nuwGqabOOeG',
+    'is_use' => 0,
+    'admin' => 0,
+    'remember_token' => NULL,
+    'created_at' => '2023-12-04 11:32:04',
+    'updated_at' => '2023-12-25 13:29:57',
+  ),
+   'changes' => 
+  array (
+  ),
+   'casts' => 
+  array (
+    'email_verified_at' => 'datetime',
+    'password' => 'hashed',
+    'is_use' => 'boolean',
+    'admin' => 'boolean',
+  ),
+   'classCastCache' => 
+  array (
+  ),
+   'attributeCastCache' => 
+  array (
+  ),
+   'dateFormat' => NULL,
+   'appends' => 
+  array (
+  ),
+   'dispatchesEvents' => 
+  array (
+  ),
+   'observables' => 
+  array (
+  ),
+   'relations' => 
+  array (
+  ),
+   'touches' => 
+  array (
+  ),
+   'timestamps' => true,
+   'usesUniqueIds' => false,
+   'hidden' => 
+  array (
+    0 => 'password',
+    1 => 'remember_token',
+  ),
+   'visible' => 
+  array (
+  ),
+   'fillable' => 
+  array (
+    0 => 'name',
+    1 => 'email',
+    2 => 'password',
+    3 => 'is_use',
+    4 => 'admin',
+  ),
+   'guarded' => 
+  array (
+    0 => '*',
+  ),
+   'rememberTokenName' => 'remember_token',
+   'accessToken' => NULL,
 ))
