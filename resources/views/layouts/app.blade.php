@@ -35,7 +35,7 @@
             <div class="container">
                 <div class="spod-logo">
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        <img src="{{ asset('image/logo.png')}}">TEST
+                        <img src="{{ asset('image/logo.png')}}">
                     </a>
                 </div>
                 <div class="search-form">
