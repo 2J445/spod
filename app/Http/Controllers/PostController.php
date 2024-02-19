@@ -98,11 +98,10 @@ class PostController extends Controller
       //音声投稿の記述
       $post->audio = $request->audio->store('audios');
       //画像投稿の記述
-      $post->image = $request->image->store('images');
+      //$post->image = $request->image->store('images');
       if($request->file('image')->isValid()) {
             $file = $request->image;
-            //バケットに「images」フォルダを作っているとき
-            $path = Storage::disk('s3')->putFile('/images',$file, 'public');
+            $path = Storage::disk('s3')->put('images', $file);
             $post->image = $path;
       }
       
